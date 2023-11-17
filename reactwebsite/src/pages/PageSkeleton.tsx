@@ -1,5 +1,5 @@
 import React from "react";
-import WebsiteNavBar from "./components/WebsiteNavBar";
+import WebsiteNavBar from "../components/common/WebsiteNavBar";
 
 class PageSkeleton extends React.Component {
   renderTop() {

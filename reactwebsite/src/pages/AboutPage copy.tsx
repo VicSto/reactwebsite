@@ -1,4 +1,4 @@
-import PageSkeleton from "../commonpage/PageSkeleton";
+import PageSkeleton from "./PageSkeleton";
 
 class AboutPage extends PageSkeleton {
   render() {

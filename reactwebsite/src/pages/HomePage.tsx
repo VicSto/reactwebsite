@@ -1,4 +1,4 @@
-import PageSkeleton from "../commonpage/PageSkeleton";
+import PageSkeleton from "./PageSkeleton";
 import profilePicture from "/src/assets/profile.png";
 
 class HomePage extends PageSkeleton {

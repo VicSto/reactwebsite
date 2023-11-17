@@ -7,7 +7,12 @@ import { Nav } from "react-bootstrap";
 class WebsiteNavBar extends React.Component {
   render() {
     return (
-      <Navbar expand="lg" fixed="top" className="bg-body-tertiary">
+      <Navbar
+        expand="lg"
+        variant="tabs"
+        fixed="top"
+        className="bg-body-tertiary"
+      >
         <Container>
           <Navbar.Brand href="home">
             <img
@@ -19,9 +24,17 @@ class WebsiteNavBar extends React.Component {
             />{" "}
             Victor Stolle
           </Navbar.Brand>
-          <Nav.Link href="about">About Me</Nav.Link>
-          <Nav.Link href="projects">Current Projects</Nav.Link>
-          <Nav.Link href="linkedin">LinkedIn</Nav.Link>
+        </Container>
+        <Container>
+          <Nav.Link className="justify-content-end" href="about">
+            About Me
+          </Nav.Link>
+          <Nav.Link className="justify-content-end" href="projects">
+            Current Projects
+          </Nav.Link>
+          <Nav.Link className="justify-content-end" href="linkedin">
+            LinkedIn
+          </Nav.Link>
         </Container>
       </Navbar>
     );

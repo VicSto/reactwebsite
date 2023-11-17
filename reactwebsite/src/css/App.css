@@ -152,6 +152,7 @@ a:active {
     background-position: center center;
     padding-top: 100vh;
     margin-bottom: 1vh;
+    width: 90vw;
 }
 
 #aboutpage-banner-image-portrait {
@@ -197,29 +198,29 @@ a:active {
 }
 
 .aboutpage-banner-image-1 {
-    background-image: url(assets/IMG_0346.jpg);
+    background-image: url(../assets/IMG_0346.jpg);
 }
 
 .aboutpage-banner-image-2 {
-    background-image: url(assets/IMG_0002.jpg);
+    background-image: url(../assets/IMG_0002.jpg);
 }
 
 .aboutpage-banner-image-3 {
-    background-image: url(assets/IMG_0001.jpg);
+    background-image: url(../assets/IMG_0001.jpg);
 }
 
 .aboutpage-banner-image-4 {
-    background-image: url(assets/IMG_0938.jpg);
+    background-image: url(../assets/IMG_0938.jpg);
 }
 
 .aboutpage-banner-image-5 {
-    background-image: url(assets/IMG_0212.jpg);
+    background-image: url(../assets/IMG_0212.jpg);
 }
 
 #aboutpage-content-bubble-4-filter {
     z-index: 1;
     background-color: #535b69;
-    background-image: url(assets/IMG_1603.jpg);
+    background-image: url(../assets/IMG_1603.jpg);
     opacity: 0.8;
     width: 63%;
     height: 100%;
