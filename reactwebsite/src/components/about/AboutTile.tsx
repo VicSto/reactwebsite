@@ -1,6 +1,9 @@
 import React from "react";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
 
 export interface AboutTileProps {
+  tileId?: string;
   bubbleOrientationIndex?: number;
   background?: string;
   title?: string;
@@ -10,13 +13,22 @@ export interface AboutTileProps {
 class AboutTile extends React.Component<AboutTileProps> {
   render() {
     return (
-      <div className="aboutpage-banner">
-        <div
-          className="aboutpage-banner-image"
+      <Container
+        id={`${this.props.tileId}`}
+        fluid={true}
+        style={{ padding: 0, position: "sticky" }}
+        className="aboutpage-banner"
+      >
+        <Image
+          src={`${this.props.background}`}
+          fluid={true}
           style={{
-            backgroundImage: `url(${this.props.background})`,
+            width: "100vw",
+            height: "100vh",
+            objectFit: "cover",
+            padding: "1vh 2.5vw 0vh 2.5vw",
           }}
-        ></div>
+        />
         <div
           className="aboutpage-content-bubble"
           id={`aboutpage-content-bubble-${this.props.bubbleOrientationIndex}`}
@@ -25,7 +37,7 @@ class AboutTile extends React.Component<AboutTileProps> {
           <hr />
           {this.props.text}
         </div>
-      </div>
+      </Container>
     );
   }
 }

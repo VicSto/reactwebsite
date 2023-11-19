@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import ProjectsPage from "./pages/ProjectsPage.tsx";
+import ProjectsMyWebsitePage from "./pages/projects/ProjectsMyWebsitePage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/projects",
-    element: <ProjectsPage />,
+    children: [
+      {
+        path: "",
+        element: <ProjectsPage />,
+      },
+      {
+        path: "mywebsite",
+        element: <ProjectsMyWebsitePage />,
+      },
+    ],
   },
   {
     path: "/linkedin",

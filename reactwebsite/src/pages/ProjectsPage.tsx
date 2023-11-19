@@ -5,7 +5,7 @@ class ProjectsPage extends PageSkeleton {
     return (
       <>
         {super.renderTop()}
-        <h1>Projects Page</h1>
+        <h1>Projects Main Page</h1>
         {super.renderBottom()}
       </>
     );

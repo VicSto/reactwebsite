@@ -1,41 +1,60 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
-import logo from "/src/assets/logo.png";
-import { Nav } from "react-bootstrap";
+import logo from "/src/assets/common/logo.png";
+import { Nav, NavDropdown } from "react-bootstrap";
 
-class WebsiteNavBar extends React.Component {
+class WebsiteNavBar extends React.Component<{}, { show: boolean }> {
+  state = { show: false };
+
+  showDropdown = (_: any) => {
+    this.setState({ show: true });
+  };
+  hideDropdown = (_: any) => {
+    this.setState({ show: false });
+  };
+
   render() {
     return (
       <Navbar
-        expand="lg"
-        variant="tabs"
+        expand="md"
+        bg="dark"
+        data-bs-theme="dark"
         fixed="top"
         className="bg-body-tertiary"
       >
-        <Container>
-          <Navbar.Brand href="home">
+        <Container style={{ left: "5vw", width: "10vw" }}>
+          <Navbar.Brand href={`/home`}>
             <img
               alt=""
               src={logo}
               width="35"
               height="35"
               className="d-inline-block align-top align-left"
-            />{" "}
+            />
             Victor Stolle
           </Navbar.Brand>
         </Container>
-        <Container>
-          <Nav.Link className="justify-content-end" href="about">
+        <Nav className="me-auto">
+          <Nav.Link href={`/about`} style={{ paddingRight: "5vw" }}>
             About Me
           </Nav.Link>
-          <Nav.Link className="justify-content-end" href="projects">
-            Current Projects
-          </Nav.Link>
-          <Nav.Link className="justify-content-end" href="linkedin">
+          <NavDropdown
+            title="My Projects"
+            id="navbar-projects-dropdown"
+            show={this.state.show}
+            onMouseEnter={this.showDropdown}
+            onMouseLeave={this.hideDropdown}
+            style={{ paddingRight: "5vw" }}
+          >
+            <NavDropdown.Item href={`/projects/mywebsite`}>
+              My Website
+            </NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link href={`/linkedin`} style={{ paddingRight: "5vw" }}>
             LinkedIn
           </Nav.Link>
-        </Container>
+        </Nav>
       </Navbar>
     );
   }

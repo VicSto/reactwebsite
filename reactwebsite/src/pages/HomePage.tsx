@@ -1,5 +1,5 @@
 import PageSkeleton from "./PageSkeleton";
-import profilePicture from "/src/assets/profile.png";
+import profilePicture from "/src/assets/home/profile.png";
 
 class HomePage extends PageSkeleton {
   render() {
