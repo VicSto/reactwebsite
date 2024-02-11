@@ -2,7 +2,7 @@ pipeline {
     agent none
     stages {
         stage('Build') {
-            agent gatewaywebhost
+            agent docker
             options {
                 // Timeout counter starts BEFORE agent is allocated
                 timeout(time: 5, unit: 'SECONDS')
@@ -16,6 +16,7 @@ pipeline {
             }       
         }
         stage('Deploy') {
+            agent { label 'gatewaywebhost'}
             steps {
                 echo 'Deploying....'
             }
