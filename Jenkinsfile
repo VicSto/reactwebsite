@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             agent { 
-                { label 'gatewaywebhost' }
+                label 'gatewaywebhost' 
             }
             options {
                 // Timeout counter starts BEFORE agent is allocated
