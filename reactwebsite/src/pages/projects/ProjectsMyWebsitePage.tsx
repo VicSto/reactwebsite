@@ -67,7 +67,7 @@ class ProjectsMyWebsitePage extends PageSkeleton {
               <strong>Title: Professional Website</strong>
               <br />
               <br />
-              Language(s): React.js, Redux.js, Bootstrap JQuery, Handlebars
+              Language(s): React.js, Redux.js, Bootstrap, Vite
               <br />
               <br />
               Description: This website!
