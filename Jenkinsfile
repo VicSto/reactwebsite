@@ -7,7 +7,7 @@ pipeline {
             }
             options {
                 // Timeout counter starts BEFORE agent is allocated
-                timeout(time: 5, unit: 'SECONDS')
+                timeout(time: 300, unit: 'SECONDS')
             }
             steps {
                 echo 'Building..'
