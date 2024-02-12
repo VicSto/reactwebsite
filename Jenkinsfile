@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 echo 'Building..'
-                sh "sudo docker-compose up"
+                sh "docker-compose up"
             }       
         }
     }
