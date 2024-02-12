@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 echo 'Building..'
-                sh "docker-compose build --force-recreate --remove-orphans  && \
+                sh "docker-compose build --no-cache --no-rm  && \
                 docker-compose up --detach"
             }       
         }
