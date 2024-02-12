@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage('Build') {
+        stage('Build & Deploy') {
             agent { 
                 label 'gatewaywebhost' 
             }
@@ -11,17 +11,8 @@ pipeline {
             }
             steps {
                 echo 'Building..'
-                def dockerImage = docker.build("reactwebsite/reactwebsite:${env.BUILD_TAG}")
-                archiveArtifacts    artifacts: dockerImage,
-                                    fingerprint: true,
-                                    onlyIfSuccessful: true
+                sh "docker-compose up"
             }       
-        }
-        stage('Deploy') {
-            agent { label 'gatewaywebhost'}
-            steps {
-                echo 'Deploying....'
-            }
         }
     }
 }
