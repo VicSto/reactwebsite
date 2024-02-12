@@ -11,9 +11,8 @@ pipeline {
             }
             steps {
                 echo 'Building..'
-                sh "docker-compose build && \
-                docker-compose up --detach --force-recreate --remove-orphans --abort-on-container-exit --exit-code-from nginx-react && \
-                docker-compose down"
+                sh "docker-compose build --force-recreate --remove-orphans  && \
+                docker-compose up --detach"
             }       
         }
     }
