@@ -10,5 +10,5 @@ FROM nginx:stable-alpine as server
 COPY --from=builder /home/node/app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/www.victorstolle.com.conf
 
-EXPOSE 1080
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
