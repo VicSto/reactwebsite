@@ -20,14 +20,10 @@ class AboutTile extends React.Component<AboutTileProps> {
         className="aboutpage-banner"
       >
         <Image
+          className="aboutpage-content-image"
+          id={`aboutpage-content-image-${this.props.bubbleOrientationIndex}`}
           src={`${this.props.background}`}
           fluid={true}
-          style={{
-            width: "100vw",
-            height: "100vh",
-            objectFit: "cover",
-            padding: "1vh 2.5vw 0vh 2.5vw",
-          }}
         />
         <div
           className="aboutpage-content-bubble"

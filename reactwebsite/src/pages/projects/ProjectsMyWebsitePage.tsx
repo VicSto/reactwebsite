@@ -1,4 +1,4 @@
-import { Card, Container } from "react-bootstrap";
+import { Card, Stack } from "react-bootstrap";
 import PageSkeleton from "../PageSkeleton";
 import Iteration1Screenshot from "../../assets/projects/website-home-screenshot.png";
 import Iteration2Screenshot from "../../assets/projects/react-website-screenshot.png";
@@ -6,19 +6,18 @@ import Iteration2Screenshot from "../../assets/projects/react-website-screenshot
 class ProjectsMyWebsitePage extends PageSkeleton {
   render() {
     return (
-      <Container fluid>
+      <>
         {super.renderTop()}
-        <Container
+        <Stack
+          gap={3}
           style={{
-            padding: "120vh 0vw 0vh 0vw",
-            position: "sticky",
             fontFamily: "Helvetica",
             justifyItems: "center",
           }}
         >
           <Card
             style={{
-              margin: "0vh 15vw 0vh 15vw",
+              left: "15vw",
               width: "70vw",
             }}
           >
@@ -52,7 +51,7 @@ class ProjectsMyWebsitePage extends PageSkeleton {
           </Card>
           <Card
             style={{
-              margin: "1.5vh 15vw 0vh 15vw",
+              left: "15vw",
               width: "70vw",
             }}
           >
@@ -82,10 +81,9 @@ class ProjectsMyWebsitePage extends PageSkeleton {
               </a>
             </Card.Body>
           </Card>
-          <br />
-        </Container>
+        </Stack>
         {super.renderBottom()}
-      </Container>
+      </>
     );
   }
 }

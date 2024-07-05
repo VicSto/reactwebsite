@@ -18,7 +18,7 @@ import {
 class AboutPage extends PageSkeleton {
   render() {
     return (
-      <div style={{ paddingTop: "400vh" }}>
+      <>
         {super.renderTop()}
         <AboutTile
           tileId="aboutpage-banner-overview"
@@ -56,7 +56,7 @@ class AboutPage extends PageSkeleton {
           text={AboutPassionTileContent()}
         />
         {super.renderBottom()}
-      </div>
+      </>
     );
   }
 }

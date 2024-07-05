@@ -1,17 +1,80 @@
+import { Card, Carousel, Col, Row, Stack } from "react-bootstrap";
 import PageSkeleton from "./PageSkeleton";
-import profilePicture from "/src/assets/home/profile.png";
+import teddyLandingPagePicture from "/src/assets/home/teddylandingpage.jpg";
+import carouselAboutMe from "/src/assets/home/carousel-aboutme.jpg";
+import carouselMyWebsite from "/src/assets/home/carousel-mywebsite.jpg";
+import { Link } from "react-router-dom";
 
 class HomePage extends PageSkeleton {
-  render() {
+  constructor(props: any) {
+    super(props);
+  }
+
+  LandingCarousel = () => {
     return (
-      <>
-        {super.renderTop()}
-        <div className="row" id="home_about_me_section">
-          <div
-            id="home_aboutpage-content"
-            className="col-sm-9 col-md-6 col-lg-8 p-5"
+      <Carousel className="home-landingcarousel">
+        <Carousel.Item>
+          <Link to="/about">
+            <img
+              src={carouselAboutMe}
+              alt="About Me"
+              className="home-landingcarousel-image"
+            />
+          </Link>
+          <Carousel.Caption className="home-landingcarousel-caption">
+            <h3>About Me</h3>
+            <p>Learn more about me, my career, and my interests.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Link to="/projects/mywebsite">
+            <img
+              src={carouselMyWebsite}
+              alt="My Website"
+              className="home-landingcarousel-image"
+            />
+          </Link>
+          <Carousel.Caption className="home-landingcarousel-caption">
+            <h3>Projects - My Website</h3>
+            <p>Learn more about the making of this website.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+    );
+  };
+
+  DesktopView = () => {
+    return (
+      <div>
+        <Stack gap={3} id="homepage">
+          <Card
+            style={{
+              width: "50vw",
+              left: "25vw",
+              fontFamily: "Palatino",
+              background: "transparent",
+              borderColor: "transparent",
+            }}
           >
-            <p>
+            <Card.Body>
+              <blockquote className="blockquote text-center">
+                <h1>
+                  <i>Code cruncher by day, weightlifting chef by night.</i>
+                </h1>
+              </blockquote>
+            </Card.Body>
+          </Card>
+          {this.LandingCarousel()}
+          <Card
+            id="home-aboutpage-content"
+            style={{
+              width: "70vw",
+              left: "15vw",
+              background: "transparent",
+              borderColor: "transparent",
+            }}
+          >
+            <Card.Body>
               I am a Senior Software engineer at Tesla Motors. I work on their
               financial servicing team, owning the post-delivery lifecycle of
               all internally financed leases and loans in Tesla. My team is
@@ -47,16 +110,30 @@ class HomePage extends PageSkeleton {
               match ingredients I have on-hand to recipes I have scraped off the
               web. My hope is to build out a complete web application that I can
               provide online for free to encourage others to enjoy cooking.
-            </p>
-          </div>
-          <div
-            id="home_aboutpage-image"
-            className="col-sm-3 col-md-6 col-lg-4 p-0"
+            </Card.Body>
+          </Card>
+          <Card
+            style={{
+              width: "70vw",
+              left: "15vw",
+              background: "transparent",
+              borderColor: "transparent",
+            }}
           >
-            <img src={profilePicture} alt="profile" />
-          </div>
-        </div>
-
+            <Card.Img variant="top" src={teddyLandingPagePicture}></Card.Img>
+          </Card>
+          <Row className="justify-content-md-center">
+            <Col md lg={1}></Col>
+          </Row>
+        </Stack>
+      </div>
+    );
+  };
+  render() {
+    return (
+      <>
+        {super.renderTop()}
+        {this.DesktopView()}
         {super.renderBottom()}
       </>
     );

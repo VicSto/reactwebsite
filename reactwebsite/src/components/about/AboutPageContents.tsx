@@ -14,12 +14,12 @@ export const AboutOverviewTileContent = () => (
       <a href="#aboutpage-banner-tesla"> See more about Tesla below</a>.
       <br />
       <br />
-      If you would like to see more about me, check out
+      If you would like to see more about me, check out{" "}
       <a href="#aboutpage-banner-personal">my Personal Background below</a>
       .
       <br />
       <br />
-      If you would like to learn more about my interests, check out
+      If you would like to learn more about my interests, check out{" "}
       <a href="aboutpage-banner-passion">My Passion below</a>.
     </p>
   </React.Fragment>

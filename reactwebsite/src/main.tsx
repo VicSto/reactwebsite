@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.css";
-import "./css/index.css";
 import "./css/App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage.tsx";
